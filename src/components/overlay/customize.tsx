@@ -10,12 +10,13 @@ export const Customize = () => {
       key="custom"
       className="absolute flex justify-center z-10 bottom-[30px] w-full h-full pointer-events-none"
     >
-      <header className="absolute top-[40px] w-full flex justify-between px-[4rem]">
+      <header className="absolute top-[40px] w-full flex justify-between px-[4rem] pointer-events-auto">
         <span
           role="button"
-          className="underline text-[#3A1B1B] font-medium underline-offset-2 "
+          className="underline cursor-pointer text-[#3A1B1B] font-medium underline-offset-2 "
           onClick={() => {
             store.isShowcase = true;
+            store.color = '#ffffff';
           }}
         >
           Close

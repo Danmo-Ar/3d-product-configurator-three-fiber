@@ -12,7 +12,7 @@ export const ShowCase = () => {
         <h1 className="text-[11vw] text-[#3A1B1B] w-[60%] leading-[1] font-black uppercase mb-[30px]">
           MY 3D PRODUCT
         </h1>
-        <p className="text-[2vw] text-white font-medium">
+        <p className="text-[2vw]  font-medium">
           React Three Fiber is Amazing
         </p>
       </main>
