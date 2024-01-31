@@ -5,6 +5,7 @@ import Image from 'next/image';
 
 export const Customize = () => {
   const { color } = useStore('color');
+
   return (
     <section
       key="custom"
@@ -50,6 +51,7 @@ export const Customize = () => {
             <div
               key={logo}
               className="w-[40px] h-[40px] rounded-full circle cursor-pointer"
+              onClick={() => (store.logo = logo)}
             >
               <Image
                 src={`/logo/${logo}-logo.png`}
