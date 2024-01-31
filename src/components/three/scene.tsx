@@ -1,10 +1,10 @@
 'use client';
 import { CameraProps, Canvas } from '@react-three/fiber';
 import { TShirt } from './mesh/t-shirt';
-import { Center, Environment } from '@react-three/drei';
+import { Center, Environment, OrbitControls } from '@react-three/drei';
 import { useRef } from 'react';
 import { Backdrop } from './backdrop';
-import { Camera } from '../camera';
+import { Camera } from './camera';
 
 interface SceneProps extends CameraProps {
   fov: number;
@@ -20,10 +20,12 @@ export const Scene = ({ position = [0, 0, 2.5], fov = 25 }: SceneProps) => {
       eventPrefix="client"
       camera={{ position, fov }}
       // Active Sahdow
+
       shadows
+      colorManagement
     >
       {/* Add Ambient Ligthing */}
-      <ambientLight intensity={0.7} />
+      <ambientLight />
       {/* Add Environement to have atmosphere light */}
       <Environment preset="city" />
       <Camera>
@@ -32,6 +34,7 @@ export const Scene = ({ position = [0, 0, 2.5], fov = 25 }: SceneProps) => {
           <Backdrop />
         </Center>
       </Camera>
+      {/* <OrbitControls /> */}
     </Canvas>
   );
 };

@@ -1,11 +1,15 @@
-import React, { useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { useGLTF } from '@react-three/drei';
+import { Group } from 'three';
+import { usePosition } from '@/hooks/usePosition';
 //gltf.pmnd.rs/ : visualise glb be file and optimize  to get the code inside Tshirt
 
 export const TShirt = ({ props }: any) => {
   const { nodes, materials } = useGLTF('/shirt_baked_collapsed.glb');
+  const Shirt = useRef<Group>(null);
+
   return (
-    <group {...props} dispose={null}>
+    <group ref={Shirt} {...props} dispose={null} position={[0.5, 0, 0]}>
       <mesh
         castShadow
         receiveShadow

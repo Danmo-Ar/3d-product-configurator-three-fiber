@@ -15,7 +15,7 @@ export const Camera = ({ children }: PropsWithChildren) => {
     // Make the T-shirt Follow the mouse position
     easing.dampE(
       MainScene.current?.rotation!,
-      [state.pointer.y / 10, -state.pointer.x / 5, 0],
+      [state.pointer.y / 10, -state.pointer.x / 10, 0],
       0.25,
       delta
     );
