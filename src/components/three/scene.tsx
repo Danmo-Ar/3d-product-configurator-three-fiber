@@ -22,7 +22,6 @@ export const Scene = ({ position = [0, 0, 2.5], fov = 25 }: SceneProps) => {
       // Active Sahdow
 
       shadows
-      colorManagement
     >
       {/* Add Ambient Ligthing */}
       <ambientLight />

@@ -9,7 +9,7 @@ export const TShirt = ({ props }: any) => {
   const Shirt = useRef<Group>(null);
 
   return (
-    <group ref={Shirt} {...props} dispose={null} position={[0.5, 0, 0]}>
+    <group ref={Shirt} {...props} dispose={null}>
       <mesh
         castShadow
         receiveShadow

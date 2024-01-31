@@ -24,3 +24,19 @@ canvas {
   /* Fix some issue on mobile when scrolling and trigger touch action */
   touch-action: none;
 }
+
+@layer base {
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .circle {
+    backface-visibility: hidden;
+    transition: 150ms ease-in-out;
+  }
+  .circle:hover {
+    scale: 1.1;
+  }
+}
