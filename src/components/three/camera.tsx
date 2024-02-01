@@ -18,7 +18,7 @@ export const Camera = ({ children }: PropsWithChildren) => {
     easing.damp3(
       state.camera.position,
       [
-        isShowcase ? -state.viewport.width / 4 : 0,
+        isShowcase ? -state.viewport.width / 5 : 0,
         0,
         window.innerWidth <= 600 ? 3 : 2.2,
       ],
