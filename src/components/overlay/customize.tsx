@@ -2,6 +2,7 @@ import { COLORS, LOGOS } from '@/contants/custumize';
 import { useStore } from '@/hooks/useStore';
 import { store } from '@/store/store';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export const Customize = () => {
   const { color } = useStore('color');
@@ -11,7 +12,8 @@ export const Customize = () => {
       key="custom"
       className="absolute flex justify-center z-10 bottom-[30px] w-full h-full pointer-events-none"
     >
-      <header className="absolute top-[40px] w-full flex justify-between px-[4rem] pointer-events-auto">
+      <Link href=""></Link>
+      <header className="absolute top-[40px] w-full flex justify-between items-center px-[4rem] pointer-events-auto">
         <span
           role="button"
           className="underline cursor-pointer text-[#3A1B1B] font-medium underline-offset-2 "
