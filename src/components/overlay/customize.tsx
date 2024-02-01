@@ -25,8 +25,23 @@ export const Customize = () => {
           Close
         </span>
         <button
-          style={{ backgroundColor: (color as any) || '#3A1B1B' }}
+          style={{
+            backgroundColor:
+              (color as any) === '#ffffff' ? '#3A1B1B' : (color as any),
+          }}
           className="rounded-md pointer-events-auto py-[12px] px-[3vw]  text-white w-[200px]"
+          onClick={() => {
+            const link = document.createElement('a');
+            link.setAttribute('download', 'product.png');
+            link.setAttribute(
+              'href',
+              document
+                .querySelector('canvas')
+                ?.toDataURL('image/ png')
+                .replace('image/png', 'image/octet—stream')!
+            );
+            link.click();
+          }}
         >
           ScreenShot
         </button>

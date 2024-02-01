@@ -20,8 +20,9 @@ export const Scene = ({ position = [0, 0, 2.5], fov = 25 }: SceneProps) => {
       eventPrefix="client"
       camera={{ position, fov }}
       // Active Sahdow
-
       shadows
+      // to take the current state of the scene and download it as texture
+      gl={{ preserveDrawingBuffer: true }}
     >
       {/* Add Ambient Ligthing */}
       <ambientLight />

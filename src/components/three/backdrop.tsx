@@ -54,7 +54,7 @@ export const Backdrop = () => {
         radius={9}
         intensity={0.7}
         ambient={0.25}
-        position={[5, 5, -10]}
+        position={[6, 5, -10]}
       />
       <RandomizedLight
         amount={4}
@@ -62,7 +62,7 @@ export const Backdrop = () => {
         intensity={0.7}
         ambient={0.25}
         position={[-5, 5, -10]}
-      />{' '}
+      />
     </AccumulativeShadows>
   );
 };
