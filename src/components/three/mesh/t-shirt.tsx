@@ -39,6 +39,7 @@ export const TShirt = ({ props }: any) => {
           position={[0, -0.01, 0.1]}
           rotation={[0, 0, 0]}
           map={texture}
+          // @ts-ignore
           opacity={0.8}
           scale={0.2}
         />
