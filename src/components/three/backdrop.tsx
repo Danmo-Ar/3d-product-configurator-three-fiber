@@ -37,8 +37,8 @@ export const Backdrop = () => {
       ref={Backdrop}
       temporal
       frames={25}
-      alphaTest={0.85}
-      scale={10}
+      alphaTest={0.65}
+      scale={5}
       rotation={[Math.PI / 2, 0, 0]}
       position={[0, 0, -0.14]}
     >

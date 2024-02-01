@@ -3,9 +3,12 @@ import { useStore } from '@/hooks/useStore';
 import { store } from '@/store/store';
 import Image from 'next/image';
 import Link from 'next/link';
+import { Transition, motion } from 'framer-motion';
 
 export const Customize = () => {
   const { color } = useStore('color');
+
+  const transitions: Transition = { duration: 0.5, type: 'spring' };
 
   return (
     <section
@@ -13,10 +16,15 @@ export const Customize = () => {
       className="absolute flex justify-center z-10 bottom-[30px] w-full h-full pointer-events-none"
     >
       <Link href=""></Link>
-      <header className="absolute top-[40px] w-full flex justify-between items-center px-[4rem] pointer-events-auto">
+      <motion.header
+        initial={{ y: -120, opacity: 0 }}
+        animate={{ y: 0, opacity: 1, transition: { ...transitions } }}
+        exit={{ y: -120, opacity: 0, transition: { ...transitions } }}
+        className="absolute top-[40px] w-full flex justify-between items-center px-[4rem] pointer-events-auto"
+      >
         <span
           role="button"
-          className="underline cursor-pointer text-[#3A1B1B] font-medium underline-offset-2 "
+          className="underline cursor-pointer text-[#3A1B1B] font-medium underline-offset-2 text-[2rem] "
           onClick={() => {
             store.isShowcase = true;
             store.color = '#ffffff';
@@ -29,7 +37,7 @@ export const Customize = () => {
             backgroundColor:
               (color as any) === '#ffffff' ? '#3A1B1B' : (color as any),
           }}
-          className="rounded-md pointer-events-auto py-[12px] px-[3vw]  text-white w-[200px]"
+          className="rounded-md pointer-events-auto py-[12px] px-[3vw] text-[2rem]  text-white w-[200px]"
           onClick={() => {
             const link = document.createElement('a');
             link.setAttribute('download', 'product.png');
@@ -45,9 +53,18 @@ export const Customize = () => {
         >
           ScreenShot
         </button>
-      </header>
+      </motion.header>
       {/* colors options  */}
-      <div className="absolute bottom-[30px] flex gap-3 pointer-events-auto">
+      <motion.div
+        initial={{ y: 20, opacity: 0 }}
+        animate={{
+          y: 0,
+          opacity: 1,
+          transition: { ...transitions, duration: 0.7, delay: 0.2 },
+        }}
+        exit={{ y: 20, opacity: 0, transition: { ...transitions } }}
+        className="absolute bottom-[30px] flex gap-3 pointer-events-auto"
+      >
         {COLORS.map(color => {
           return (
             <div
@@ -59,10 +76,19 @@ export const Customize = () => {
             ></div>
           );
         })}
-      </div>
+      </motion.div>
 
       {/* Logo : decals */}
-      <div className="absolute left-[50%] translate-x-[-50%] flex gap-[1rem] top-[20%]  pointer-events-auto ">
+      <motion.div
+        initial={{ y: -20, opacity: 0 }}
+        animate={{
+          y: 0,
+          opacity: 1,
+          transition: { ...transitions, duration: 0.7, delay: 0.4 },
+        }}
+        exit={{ y: -20, opacity: 0, transition: { ...transitions } }}
+        className="absolute left-[50%] !translate-x-[-50%] flex gap-[1rem] top-[20%]  pointer-events-auto "
+      >
         {LOGOS.map(logo => {
           return (
             <div
@@ -79,7 +105,7 @@ export const Customize = () => {
             </div>
           );
         })}
-      </div>
+      </motion.div>
     </section>
   );
 };

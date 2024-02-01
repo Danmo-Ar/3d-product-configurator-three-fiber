@@ -10,6 +10,6 @@ export const store = proxy<{
   logo: string;
 }>({
   isShowcase: true,
-  color: '#fffff',
+  color: '#ffffff',
   logo: 'naruto',
 });
